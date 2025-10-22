@@ -1,6 +1,39 @@
+import Cartao from "./Cartao"
 import Pedido from "./Pedido"
 
 const App = () => {
+
+  const pedidos = [
+    {
+      data: '22/10/2025',
+      titulo: 'SSD',
+      icone: 'hard-drive',
+      descricao: 'Um SSD de 1 Tera',
+      categoriaIcone: 'solid'
+    },
+    {
+      data: '22/01/2025',
+      titulo: 'Um Livro',
+      icone: 'book',
+      descricao: 'Concrete Maths',
+      categoriaIcone: 'solid'
+    },
+    {
+      data: '20/10/2025',
+      titulo: 'Âncora',
+      icone: 'anchor',
+      descricao: 'Uma âncora',
+      categoriaIcone: 'solid'
+    },
+    {
+      data: '22/10/2025',
+      titulo: 'Peixe',
+      icone: 'fish',
+      descricao: 'Um peixe',
+      categoriaIcone: 'solid'
+    },
+    
+  ]
   return (
     <div className="container border rounded mt-2">
       
@@ -11,38 +44,22 @@ const App = () => {
       </div>
 
       <div className="row">
-        <div className="col-sm-12 col-lg-6 col-xl-4 col-xxl-3">
-          <Pedido 
-            data='20/05/2025'
-            categoriaIcone='solid'
-            icone='hard-drive'
-            titulo='SSD'
-            descricao='SSD de 1 Terabyte'/>
-        </div>
-        <div className="col-sm-12 col-lg-6 col-xl-4 col-xxl-3">
-          <Pedido 
-            data='22/07/2025'
-            categoriaIcone='solid'
-            icone='book'
-            titulo='Livro'
-            descricao='Concrete Maths'/>
-        </div>
-        <div className="col-sm-12 col-lg-6 col-xl-4 col-xxl-3">
-          <Pedido 
-            data='21/09/2025'
-            categoriaIcone='solid'
-            icone='anchor'
-            titulo='Âncora'
-            descricao='Uma âncora'/>
-        </div>
-        <div className="col-sm-12 col-lg-6 col-xl-4 col-xxl-3">
-          <Pedido 
-            data='22/05/2025'
-            categoriaIcone='solid'
-            icone='fish'
-            titulo='Peixe'
-            descricao='Um peixe'/> 
-        </div>  
+        {
+          pedidos.map((p, index) => (
+
+            <div key={index} className="col-sm-12 col-lg-6 col-xl-4 col-xxl-3">
+              <Cartao
+                cabecalho={p.data}>
+                <Pedido 
+                  categoriaIcone={p.categoriaIcone}
+                  icone={p.icone}
+                  titulo={p.titulo}
+                  descricao={p.descricao}/>
+              </Cartao>
+            </div>
+          ))
+        }
+         
       </div>
     </div>
   )
