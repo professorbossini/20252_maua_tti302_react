@@ -1,10 +1,10 @@
 // rafce
 import React from 'react'
 
-const Pedido = ({data, icone, categoriaIcone, titulo, descricao}) => {
-  // const data = props.data
-  // const icone = props.icone
-  // const { data, icone } = props
+const Pedido = ( { icone, categoriaIcone, titulo, descricao } ) => {
+  // // const data = props.data
+  // // const icone = props.icone
+  // const { data, icone, categoriaIcone, titulo, descricao } = props
   return (
       <div className="d-flex">
         <div className="d-flex align-items-center">

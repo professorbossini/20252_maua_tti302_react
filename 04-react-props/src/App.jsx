@@ -1,41 +1,39 @@
+import Cartao from "./Cartao"
 import Pedido from "./Pedido"
 import Cartao from "./Cartao"
 const App = () => {
 
   const pedidos = [
     {
-      data: '22/05/2025',
-      categoriaIcone: 'solid',
-      icone: 'hard-drive',
+      data: '22/10/2025',
       titulo: 'SSD',
-      descricao: 'Um SSD'
-
+      icone: 'hard-drive',
+      descricao: 'Um SSD de 1 Tera',
+      categoriaIcone: 'solid'
     },
     {
-      data: '21/09/2025',
-      categoriaIcone: 'solid',
+      data: '22/01/2025',
+      titulo: 'Um Livro',
       icone: 'book',
-      titulo: 'Um livro',
-      descricao: 'Concrete Maths'
-
+      descricao: 'Concrete Maths',
+      categoriaIcone: 'solid'
     },
     {
-      data: '22/09/2025',
-      categoriaIcone: 'solid',
-      icone: 'anchor',
+      data: '20/10/2025',
       titulo: 'Âncora',
-      descricao: 'Uma âncora'
-
-    },{
-      data: '21/10/2025',
-      categoriaIcone: 'solid',
-      icone: 'fish',
+      icone: 'anchor',
+      descricao: 'Uma âncora',
+      categoriaIcone: 'solid'
+    },
+    {
+      data: '22/10/2025',
       titulo: 'Peixe',
-      descricao: 'Um peixe'
-
-    }
+      icone: 'fish',
+      descricao: 'Um peixe',
+      categoriaIcone: 'solid'
+    },
+    
   ]
-
   return (
     <div className="container border rounded mt-2">
       
@@ -48,22 +46,20 @@ const App = () => {
       <div className="row">
         {
           pedidos.map((p, index) => (
-            <div className="col-sm-12 col-lg-6 col-xl-4 col-xxl-3">
 
+            <div key={index} className="col-sm-12 col-lg-6 col-xl-4 col-xxl-3">
               <Cartao
                 cabecalho={p.data}>
-                <Pedido               
+                <Pedido 
                   categoriaIcone={p.categoriaIcone}
                   icone={p.icone}
                   titulo={p.titulo}
                   descricao={p.descricao}/>
               </Cartao>
-
             </div>
           ))
         }
-
-        
+         
       </div>
     </div>
   )
