@@ -1,6 +1,6 @@
 import Cartao from "./Cartao"
+import Feedback from "./Feedback"
 import Pedido from "./Pedido"
-import Cartao from "./Cartao"
 const App = () => {
 
   const pedidos = [
@@ -34,6 +34,21 @@ const App = () => {
     },
     
   ]
+
+  const textoOK = 'Já chegou!'
+  const textoNOK = 'Ainda não chegou!'
+  const funcaoOK = () => alert('Obrigado pelo feedback!')
+  const funcaoNOK = () => alert('Verificaremos o ocorrido!')
+
+  const componenteFeedback = (
+    <Feedback 
+      textoOK={textoOK}
+      textoNOK={textoNOK}
+      funcaoOK={funcaoOK}
+      funcaoNOK={funcaoNOK}
+    />
+  )
+
   return (
     <div className="container border rounded mt-2">
       
@@ -55,6 +70,12 @@ const App = () => {
                   icone={p.icone}
                   titulo={p.titulo}
                   descricao={p.descricao}/>
+                  {componenteFeedback}
+                  {/* <Feedback 
+                    textoOK='Já chegou!'
+                    textoNOK='Ainda não chegou!'
+                    funcaoOK={() => alert('Obrigado pelo feedback!')}
+                    funcaoNOK={() => alert('Verificaremos o ocorrido!')}/> */}
               </Cartao>
             </div>
           ))
